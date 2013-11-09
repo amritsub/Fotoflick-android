@@ -1,4 +1,4 @@
-package com.picola.fotoflickr;
+package com.picola.fotoflick;
 
 import java.util.Date;
 import java.util.List;
@@ -20,8 +20,9 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 import com.parse.ParseQueryAdapter.OnQueryLoadListener;
+import com.picola.fotoflickr.R;
 
-public class ParseStarterProjectActivity extends Activity {
+public class FotoFlickActivity extends Activity {
 
     private GridView mGridView;
     private ProgressBar mProgressBar;
@@ -52,7 +53,7 @@ public class ParseStarterProjectActivity extends Activity {
             new ParseQueryAdapter.QueryFactory<ParseObject>() {
               public ParseQuery<ParseObject> create() {
                 ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Image");
-                query.whereGreaterThan("createdAt", mLastHour);
+//                query.whereGreaterThan("createdAt", mLastHour);
                 query.orderByDescending("createdAt");
                 return query;
               }
@@ -61,7 +62,7 @@ public class ParseStarterProjectActivity extends Activity {
             @Override
             public View getItemView(ParseObject object, View v, ViewGroup parent) {
                 if (v == null) {
-                    v = View.inflate(ParseStarterProjectActivity.this, R.layout.photo, null);
+                    v = View.inflate(FotoFlickActivity.this, R.layout.photo, null);
                 }
 
                 super.getItemView(object, v, parent);

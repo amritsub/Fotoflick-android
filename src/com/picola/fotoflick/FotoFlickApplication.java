@@ -1,4 +1,4 @@
-package com.picola.fotoflickr;
+package com.picola.fotoflick;
 
 import android.app.Application;
 
@@ -10,7 +10,7 @@ import com.parse.Parse;
 import com.parse.ParseACL;
 import com.parse.ParseUser;
 
-public class ParseApplication extends Application {
+public class FotoFlickApplication extends Application {
 
     @Override
     public void onCreate() {
